@@ -1,0 +1,127 @@
+@import '../../styles/color.scss';
+
+.topnav {
+  width           : 100%;
+  display         : flex;
+  justify-content : space-between;
+  align-items     : center;
+  position        : fixed;
+  top             : 0;
+  left            : 0;
+  background-color: $color-white;
+  padding         : 10px 20px;
+  box-shadow      : 0 4px 6px rgba(0, 0, 0, 0.3);
+  z-index         : 3;
+
+  .left-links {
+    display: flex;
+
+    .topnav-logo-button {
+      width          : 42px;
+      height         : 42px;
+      display        : flex;
+      justify-content: center;
+      align-items    : center;
+
+      .topnav-logo {
+        width : 40px;
+        height: 40px;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color          : $color-text;
+      padding        : 0px;
+      border-radius  : 999px;
+      transition     : background-color 0.3s ease, transform 0.2s ease;
+
+      &:hover {
+        color    : $color-white;
+        transform: scale(1.1);
+      }
+
+      &.active {
+        background-color: $color-primary;
+        color           : $color-white;
+      }
+    }
+  }
+
+  .right-links {
+    display: flex;
+    gap    : 20px;
+
+    a {
+      text-decoration: none;
+      color          : $color-text;
+      font-size      : 16px;
+      font-weight    : 500;
+      padding        : 8px 12px;
+      border-radius  : 4px;
+      transition     : background-color 0.3s ease, transform 0.2s ease;
+
+      &:hover {
+        background-color: $color-navbar-hover;
+        color           : $color-white;
+        transform       : scale(1.1);
+      }
+
+      &.active {
+        background-color: $color-primary;
+        color           : $color-white;
+      }
+    }
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 570px) {
+    .right-links {
+      display         : none;
+      position        : absolute;
+      top             : 100%;
+      right           : 0;
+      background-color: $color-white;
+      flex-direction  : column;
+      gap             : 0;
+      width           : 100%;
+      box-shadow      : 0 4px 6px rgba(0, 0, 0, 0.3);
+
+      a {
+        padding      : 12px 20px;
+        text-align   : center;
+        border-bottom: 1px solid $color-navbar-hover;
+      }
+
+      &.show {
+        display: flex;
+        z-index: 3;
+      }
+    }
+
+    .navbar-menu-mobile-icon {
+      .navbar-menu-icon {
+        display: flex;
+
+        &:hover {
+          color    : $color-primary;
+          transform: scale(1.1);
+        }
+
+        &:active {
+          color: $color-button-active;
+        }
+      }
+    }
+  }
+
+  .overlay {
+    position        : fixed;
+    top             : 60px;
+    left            : 0;
+    width           : 100%;
+    height          : 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index         : 2;
+  }
+}

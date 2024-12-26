@@ -1,0 +1,86 @@
+@import '../../styles/color.scss';
+
+.ticket-table-container {
+    // padding         : 10px;
+    background-color: $color-white;
+
+    height         : 100%;
+    width          : 100%;
+    border-collapse: collapse;
+    overflow       : auto;
+    display        : flex;
+    justify-content: center;
+
+    .ticket-table {
+        width     : 800px;
+        overflow-x: auto;
+
+        border-collapse: collapse;
+        display        : block; // Bật chế độ block để có thể scroll tbody
+
+        thead {
+            display: block;
+            width  : 100%;
+
+            tr {
+                display         : block;
+                width           : 100%;
+                box-sizing      : border-box;
+                background-color: $color-primary;
+
+                &:hover {
+                    background-color: $color-primary;
+                }
+
+                th {
+                    padding         : 5px 10px;
+                    width           : 120px;
+                    text-align      : left;
+                    border-bottom   : 1px solid $color-gray;
+                    background-color: $color-primary;
+
+                    font-size: 12px;
+                    color    : $color-white;
+
+                    z-index: 1;
+
+                    &:first-child {
+                        width: 200px;
+                    }
+                }
+
+
+            }
+
+        }
+
+        tbody {
+            display   : block;
+            max-height: 300px;
+            width     : 800px;
+            box-sizing: border-box;
+            overflow-y: auto;
+
+            tr {
+                width: 800px;
+
+                td {
+                    padding      : 5px 10px;
+                    text-align   : left;
+                    border-bottom: 1px solid $color-button-hover;
+                    font-size    : 12px;
+                    width        : 120px; // Đảm bảo mỗi ô chiếm diện tích phù hợp
+
+                    &:first-child {
+                        width: 200px;
+                    }
+                }
+            }
+
+        }
+
+        tr:hover {
+            background-color: $color-button-hover;
+        }
+    }
+}
